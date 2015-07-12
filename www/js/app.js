@@ -74,6 +74,16 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers'])
             }
           })
 
+          .state('app.moods', {
+            url: "/moods",
+            views: {
+              'menuContent': {
+                templateUrl: "templates/moods.html",
+                controller: 'MoodsCtrl'
+              }
+            }
+          })
+
           .state('app.single', {
             url: "/playlists/:playlistId",
             views: {

@@ -1,0 +1,22 @@
+
+
+<ion-view view-title="Moods">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="addMood()">
+            Add a mood
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item item-button-right" ng-repeat="mood in moods">
+
+                {{mood.content}} (created by {{mood.createdBy}} on {{ mood.created | date:'medium'}})
+
+                <button class="button button-balanced" ng-click="deleteMood(mood)">
+                    <i class="icon ion-trash-a"></i>
+                </button>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

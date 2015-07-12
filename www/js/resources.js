@@ -1,6 +1,6 @@
 angular.module("starter")
-    .factory("Auth", function($firebaseAuth) {
-        var usersRef = new Firebase("https://scorching-inferno-7420.firebaseio.com/users");
+    .factory("Auth", function($firebaseAuth, DB) {
+        var usersRef = new Firebase(DB);
         return $firebaseAuth(usersRef);
     })
     .factory('Ref', function(DB){
@@ -11,7 +11,6 @@ angular.module("starter")
         return new Firebase(DB.REF + DB.USERS);
     })
 
-    .factory("Users", function($firebaseArray, DB){
-        var usersRef = new Firebase(DB + DB.USERS);
-        return $firebaseArray(usersRef);
+    .factory("MoodsRef", function($firebaseArray, DB){
+        return new Firebase(DB.REF + DB.MOODS);
     });
